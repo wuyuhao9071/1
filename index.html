@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>只因你太美</title>
+    
+    <style>
+        .my-button {
+            background-color: #4CAF50; /* 设置背景颜色 */
+            border: none; /* 去除边框 */
+            color: white; /* 设置文字颜色 */
+            padding: 10px 20px; /* 设置内边距 */
+            text-align: center; /* 文字居中对齐 */
+            display: inline-block; /* 元素以行内块显示，使按钮水平排列 */
+            font-size: 20px; /* 设置文字大小 */
+            cursor: pointer; /* 添加指针样式 */
+            border-radius: 5px; /* 添加圆角 */
+        }
+        .sponsor h3 {
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+
+        .sponsor p {
+            font-size: 14px;
+            color: #666;
+            margin: 0;
+        }
+        img {
+  width: 111px; /* 设置宽度为111像素 */
+  height: 152px; /* 设置高度为152像素 */
+}
+                .gallery {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .thumbnail {
+            width: 150px;
+            height: 150px;
+            margin: 10px;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .thumbnail img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 9999;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal img {
+            width: 80%;
+            max-height: 80%;
+            object-fit: contain;
+        }
+
+    </style>
+    <script>
+      function updateTime() {
+        var targetDate = new Date("September 1, 1939 04:45:00");
+        var currentDate = new Date();
+        var timeDiff = currentDate.getTime() - targetDate.getTime();
+
+        // 计算时间差，单位为毫秒
+        var seconds = Math.floor(timeDiff / 1000);
+        var minutes = Math.floor(seconds / 60);
+        var hours = Math.floor(minutes / 60);
+        var days = Math.floor(hours / 24);
+
+        seconds %= 60;
+        minutes %= 60;
+        hours %= 24;
+
+        // 将时间差显示在页面上
+        document.getElementById("days").textContent = days;
+        document.getElementById("hours").textContent = hours;
+        document.getElementById("minutes").textContent = minutes;
+        document.getElementById("seconds").textContent = seconds;
+
+        setTimeout(updateTime, 1000); // 每秒更新一次时间
+      }
+    </script>
+</head>
+<body onload="updateTime()">
+    <h1>选一个</h1>
+    
+    <button class="my-button" onclick="showImage()">好康的图片</button>
+    <button class="my-button" onclick="showVideo()">你懂的～</button>
+        <h1>距离1939年9月1日4:45(闪击波兰)的时间：</h1>
+
+    <p>
+      <span id="days"></span> 天
+      <span id="hours"></span> 小时
+      <span id="minutes"></span> 分钟
+      <span id="seconds"></span> 秒
+    </p>
+    <script>
+        function showImage() {
+  var galleryHtml = `
+    <div class="gallery">
+      <div class="thumbnail" onclick="showModal('image1.jpg')">
+        <img src="image1.jpg" alt="Image 1">
+      </div>
+      <div class="thumbnail" onclick="showModal('image2.jpg')">
+        <img src="image2.jpg" alt="Image 2">
+      </div>
+      <div class="thumbnail" onclick="showModal('image3.jpg')">
+        <img src="image3.jpg" alt="Image 3">
+      </div>
+      <!-- 添加更多图片 -->
+    </div>
+  
+    <div class="modal" id="modal">
+      <img src="" alt="Enlarged Image" id="modalImage">
+    </div>
+  `;
+  document.body.innerHTML = galleryHtml;
+}
+
+        
+        function showVideo() {
+            window.location.href = "v.mp4";
+        }
+        function showModal(imagePath) {
+            var modal = document.getElementById('modal');
+            var modalImage = document.getElementById('modalImage');
+            modalImage.src = imagePath;
+            modal.style.display = 'flex';
+        }
+
+        window.onclick = function(event) {
+            var modal = document.getElementById('modal');
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+    <h6>Wuyuhao制作</h6>
+    <p>赞助：</p>
+    <img src="money.png" alt="赞助二维码">
+    <div class="sponsor">
+        <h3>李东炎</h3>
+        <p>捐赠1.00大洋</p>
+    </div>
+</body>
+</html>
