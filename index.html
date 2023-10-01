@@ -79,12 +79,15 @@
         var minutes = Math.floor(seconds / 60);
         var hours = Math.floor(minutes / 60);
         var days = Math.floor(hours / 24);
+        var years = Math.floor(days / 365)
 
         seconds %= 60;
         minutes %= 60;
         hours %= 24;
+        years %= 365;
 
         // 将时间差显示在页面上
+        document.getElementById("years").textContent = years;
         document.getElementById("days").textContent = days;
         document.getElementById("hours").textContent = hours;
         document.getElementById("minutes").textContent = minutes;
@@ -97,11 +100,12 @@
 <body onload="updateTime()">
     <h1>选一个</h1>
     
-    <button class="my-button" onclick="showImage()">好康的图片</button>
+    <button class="my-button" onclick="showImage()">好康图片库</button>
     <button class="my-button" onclick="showVideo()">你懂的～</button>
         <h1>距离1939年9月1日4:45(闪击波兰)的时间：</h1>
 
     <p>
+      <span id="years"></span> 年
       <span id="days"></span> 天
       <span id="hours"></span> 小时
       <span id="minutes"></span> 分钟
@@ -148,12 +152,12 @@
             }
         }
     </script>
-    <h6>Wuyuhao制作</h6>
-    <p>赞助：</p>
+    <h6>WuYuhao制作 已永久迁移至新网址：wuyuhao9071.github.io/1</h6>
+    <p>鸣谢：</p>
     <img src="money.png" alt="赞助二维码">
     <div class="sponsor">
         <h3>李东炎</h3>
-        <p>捐赠1.00大洋</p>
+        <p>赞助1.00大洋</p>
     </div>
 </body>
 </html>
