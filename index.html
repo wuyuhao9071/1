@@ -15,6 +15,16 @@
             cursor: pointer; /* 添加指针样式 */
             border-radius: 5px; /* 添加圆角 */
         }
+        .newsbutton {
+            background-color: #FF2020; /* 设置背景颜色 */
+            border: none; /* 去除边框 */
+            color: green; /* 设置文字颜色 */
+            padding: 10px 20px; /* 设置内边距 */
+            text-align: center; /* 文字居中对齐 */
+            font-size: 50px; /* 设置文字大小 */
+            cursor: pointer; /* 添加指针样式 */
+            border-radius: 10px; /* 添加圆角 */
+        }
         .sponsor h3 {
             font-size: 18px;
             margin-bottom: 5px;
@@ -25,6 +35,12 @@
             color: #666;
             margin: 0;
         }
+        .news h1 {
+            font-size: 50px;
+            color: red;
+            
+        }
+        
         img {
   width: 111px; /* 设置宽度为111像素 */
   height: 152px; /* 设置高度为152像素 */
@@ -110,7 +126,7 @@
     
     <button class="my-button" onclick="showImage()">好康图片库</button>
     <button class="my-button" onclick="showVideo()">进来被骗</button>
-    <button class="my-button" onclick="news()">近日要闻</button>
+    <button class="newsbutton" onclick="news()">近日要闻（更新）</button>
     
     <h1>距离1939年9月1日4:45(闪击波兰)的时间：</h1>
 
@@ -148,11 +164,13 @@
         function news(){
             var newspaper=`
             <button class="my-button" onclick="goBack()">返回</button>
+            <div class="news">
                 <h1>刘某诺（Little Boy）竟然私自添加班长微信，后撤回违禁图片，这究竟是人性的陨灭还是道德的沦丧？？？</h1>
                 <h3>新闻提供邮箱:</h3>
                 <h3>wuyuhao9071@163.com</h3>
                 <h3>wuyuhao9071@gmail.com</h3>
                 <h3>wuyuhao9071@outlook.com</h3>
+            </div>
             `;
             document.body.innerHTML = newspaper;
         }
@@ -182,10 +200,10 @@
     src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
     </script>
     <span id="busuanzi_container_site_pv" class="count">
-    本站总访问次数<span id="busuanzi_value_site_pv" class="num"></span>次
+    本站总访问次数<span id="busuanzi_value_site_pv" class="num"></span>次  
     </span>
     <span id="busuanzi_container_site_uv" class="count">
-    本站总访问人数<span id="busuanzi_value_site_uv" class="num"></span>次
+    本站总访问人数<span id="busuanzi_value_site_uv" class="num"></span>人
     </span>
 
     <h3>WuYuhao制作 已永久迁移至新网址：</h3>
