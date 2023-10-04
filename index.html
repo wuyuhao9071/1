@@ -11,9 +11,9 @@
             padding: 10px 20px; /* 设置内边距 */
             text-align: center; /* 文字居中对齐 */
             display: inline-block; /* 元素以行内块显示，使按钮水平排列 */
-            font-size: 20px; /* 设置文字大小 */
+            font-size: 40px; /* 设置文字大小 */
             cursor: pointer; /* 添加指针样式 */
-            border-radius: 5px; /* 添加圆角 */
+            border-radius: 8px; /* 添加圆角 */
         }
         .newsbutton {
             background-color: #FF2020; /* 设置背景颜色 */
@@ -42,8 +42,8 @@
         }
         
         img {
-  width: 111px; /* 设置宽度为111像素 */
-  height: 152px; /* 设置高度为152像素 */
+  width: 222px; /* 设置宽度为111像素 */
+  height: 304px; /* 设置高度为152像素 */
 }
                 .gallery {
             display: flex;
@@ -125,7 +125,7 @@
     <h1>选一个</h1>
     
     <button class="my-button" onclick="showImage()">好康图片库</button>
-    <button class="my-button" onclick="showVideo()">进来被骗</button>
+    <button class="newsbutton" onclick="showVideo()">好康视频（更新）</button>
     <button class="newsbutton" onclick="news()">近日要闻（更新）</button>
     
     <h1>距离1939年9月1日4:45(闪击波兰)的时间：</h1>
@@ -176,7 +176,7 @@
         }
         
         function showVideo() {
-            window.location.href = "v.mp4";
+            window.location.href = "cxk.mp4";
         }
         function showModal(imagePath) {
             var modal = document.getElementById('modal');
