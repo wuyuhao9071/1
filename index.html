@@ -120,6 +120,16 @@
         setTimeout(updateTime, 1000); // 每秒更新一次时间
       }
     </script>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script>
+      $(document).ready(function () {
+        $.getJSON("https://api.ipify.org?format=json", function (data) {
+          var ip = data.ip;
+          $("#visitor-ip").text(ip);
+        });
+      });
+    </script>
 </head>
 <body onload="updateTime()">
     <h1>选一个</h1>
@@ -127,7 +137,7 @@
     <button class="my-button" onclick="showImage()">好康图片库</button>
     <button class="newsbutton" onclick="showVideo()">好康视频（更新）</button>
     <button class="newsbutton" onclick="news()">近日要闻（更新）</button>
-    
+    <button class="my-button" onclick="marks()">查看成绩单</button>
     <h1>距离1939年9月1日4:45(闪击波兰)的时间：</h1>
 
     <p>
@@ -174,6 +184,29 @@
             `;
             document.body.innerHTML = newspaper;
         }
+        function marks(){
+            var newspaper=`
+            <button class="my-button" onclick="goBack()">返回</button>
+            <button class="my-button" onclick="checkPassword()">点击此处查看成绩单</button>
+
+	<div id="images" style="display:none">
+		<img src="m1.jpg" alt="图片1">
+		<img src="m2.jpg" alt="图片2">
+		<img src="m3.jpg" alt="图片3">
+	</div>
+            `;
+            document.body.innerHTML = newspaper;
+        }
+        
+        function checkPassword() {
+			const password = prompt("请输入密码");
+
+			if (password === "niganma") {
+				document.getElementById("images").style.display = "block";
+			} else {
+				alert("密码错误，支付1元获取");
+			}
+		}
         
         function showVideo() {
             window.location.href = "cxk.mp4";
@@ -208,6 +241,7 @@
 
     <h3>WuYuhao制作 已永久迁移至新网址：</h3>
     <a href="https://wuyuhao9071.github.io/1" target="_blank">https://wuyuhao9071.github.io/1</a>
+    <p id="visitor-ip">正在获取您的IP地址...</p>
     <h3>赞助：</h3>
     <img src="money.png" alt="赞助二维码">
     <h1>鸣谢：</h1>
