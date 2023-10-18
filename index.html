@@ -90,21 +90,27 @@
             font-size: 40px;
             color: red
         }
+	.mytime {
+	    font-size: 40px;
+            color: red
+	}
 
     </style>
     <script>
       function updateTime() {
-        var targetDate = new Date("September 1, 1939 04:45:00");
+        var targetDate = new Date("October 19, 2023 07:30:00");
         var currentDate = new Date();
         var timeDiff = currentDate.getTime() - targetDate.getTime();
 
         // 计算时间差，单位为毫秒
+	var ms = Math.floor(timeDiff);
         var seconds = Math.floor(timeDiff / 1000);
         var minutes = Math.floor(seconds / 60);
         var hours = Math.floor(minutes / 60);
         var days = Math.floor(hours / 24);
         var years = Math.floor(days / 365)
 
+	ms %= 1000;
         seconds %= 60;
         minutes %= 60;
         hours %= 24;
@@ -116,8 +122,9 @@
         document.getElementById("hours").textContent = hours;
         document.getElementById("minutes").textContent = minutes;
         document.getElementById("seconds").textContent = seconds;
+	document.getElementById("ms").textContent = ms;
 
-        setTimeout(updateTime, 1000); // 每秒更新一次时间
+        setTimeout(updateTime, 1); // 每秒更新一次时间
       }
     </script>
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -135,17 +142,18 @@
     <h1>选一个</h1>
     
     <button class="my-button" onclick="showImage()">好康图片库</button>
-    <button class="newsbutton" onclick="showVideo()">好康视频（更新）</button>
+    <button class="my-button" onclick="showVideo()">好康视频</button>
     <button class="newsbutton" onclick="news()">近日要闻（更新）</button>
     <button class="my-button" onclick="marks()">查看成绩单</button>
-    <h1>距离1939年9月1日4:45(闪击波兰)的时间：</h1>
+    <h1>距离2023年10月19日7:30(月考)的时间：</h1>
 
     <p>
-      <span id="years"></span> 年
-      <span id="days"></span> 天
-      <span id="hours"></span> 小时
-      <span id="minutes"></span> 分钟
-      <span id="seconds"></span> 秒
+      <span id="years" class="mytime"></span>年
+      <span id="days" class="mytime"></span>天
+      <span id="hours" class="mytime"></span>小时
+      <span id="minutes" class="mytime"></span>分钟
+      <span id="seconds" class="mytime"></span>秒
+      <span id="seconds" class="mytime"></span>毫秒
     </p>
     <script>
         function showImage() {
@@ -175,7 +183,7 @@
             var newspaper=`
             <button class="my-button" onclick="goBack()">返回</button>
             <div class="news">
-                <h1>刘某诺（Little Boy）竟然私自添加班长微信，后撤回违禁图片，这究竟是人性的陨灭还是道德的沦丧？？？</h1>
+                <h1>明天月考，大家加油！</h1>
                 <h3>新闻提供邮箱:</h3>
                 <h3>wuyuhao9071@163.com</h3>
                 <h3>wuyuhao9071@gmail.com</h3>
