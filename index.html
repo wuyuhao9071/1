@@ -100,7 +100,7 @@
       function updateTime() {
         var targetDate = new Date("October 19, 2023 07:30:00");
         var currentDate = new Date();
-        var timeDiff = currentDate.getTime() - targetDate.getTime();
+        var timeDiff = targetDate.getTime() - currentDate.getTime();
 
         // 计算时间差，单位为毫秒
 	var ms = Math.floor(timeDiff);
