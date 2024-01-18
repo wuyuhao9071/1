@@ -130,7 +130,7 @@
     </style>
     <script>
       function updateTime() {
-        var targetDate = new Date("February 10, 2024 07:30:00");
+        var targetDate = new Date("January 23, 2024 07:40:00");
         var currentDate = new Date();
         var timeDiff = targetDate.getTime() - currentDate.getTime();
 
@@ -156,7 +156,7 @@
         document.getElementById("seconds").textContent = seconds;
 	document.getElementById("ms").textContent = ms;
 
-        setTimeout(updateTime, 53); 
+        setTimeout(updateTime, 1); 
       }
     </script>
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -177,7 +177,7 @@
     <button class="my-button" onclick="showVideo()">好康视频</button>
     <button class="my-button" onclick="news()">近日要闻</button>
     <button class="newsbutton" onclick="marks()">查看成绩单(更新)</button>
-    <h1>距离2024年2月10日(春节)的时间：</h1>
+    <h1>距离期末考试：</h1>
 
     <p>
       <span id="years" class="mytime"></span>年
